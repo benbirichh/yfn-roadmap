@@ -50,7 +50,12 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl: githubUrl + "/blob/staging",
         },
-
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -58,19 +63,7 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: '/docs/startup-basics/start/funding',
-            to: '/docs/startup-basics/start',
-          },
-        ],
-      },
-    ],
-  ],
+  plugins: [],
 
   themeConfig: {
     image: "img/yfn-social-card.jpg",
